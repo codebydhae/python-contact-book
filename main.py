@@ -21,3 +21,19 @@ def delete_contact(contactList):
             contactList.remove(contact)
     print(f"You removed ${contact} from list.")
  
+def main():
+    answer = input("Welcome to your personal contact book. To add contact, press 1 . To delete contact, press 2 . To preview available contacts, press 3 .")
+    if answer == "1":
+        add_contact()
+        main()
+    if answer == "2":
+        delete_contact(contactList)
+        main()
+    if answer == "3":
+        show_contact(contactList)
+        main()
+    else:
+        print("Please enter valid selection")
+        main()
+
+main()
